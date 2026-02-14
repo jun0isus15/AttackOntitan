@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진격의 거인 배틀 - Attack On Titan Battle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚔️ 진격의 거인 배틀 ⚔️</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">골드:</span>
+                    <span id="gold" class="stat-value">50</span> G
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">조사병단 HP:</span>
+                    <span id="hp" class="stat-value">100</span> / 100
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">스테이지:</span>
+                    <span id="stage" class="stat-value">1</span> / 10
+                </div>
+            </div>
+        </div>
+
+        <div class="game-section">
+            <div class="canvas-container">
+                <canvas id="gameCanvas" width="800" height="400"></canvas>
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="pauseBtn">일시정지</button>
+                <button class="btn" id="upgradeBtn">업그레이드</button>\n                <button class="btn" id="resetBtn">게임 리셋</button>
+                
+                <div class="difficulty-selector">
+                    <label for="difficulty">난이도:</label>
+                    <select id="difficulty">
+                        <option value="easy">쉬움</option>
+                        <option value="normal" selected>중간</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="characters-section">
+            <h2>📋 배포 가능한 조사병단</h2>
+            <div id="charactersGrid" class="characters-grid"></div>
+            <div id="characterInfo" class="character-info">
+                <p style="color: #999;">캐릭터를 선택하면 정보가 표시됩니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 업그레이드 모달 -->
+    <div id="upgradeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🔧 업그레이드</h2>
+            <p style="color: #666; margin-bottom: 20px;">캐릭터와 능력을 강화해보세요!</p>
+            <div id="upgradesList" class="upgrades-list"></div>
+        </div>
+    </div>
+
+    <!-- 게임 오버 모달 -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content game-over">
+            <h2 id="gameOverTitle"></h2>
+            <p id="gameOverMessage"></p>
+            <button class="btn" id="restartBtn" style="width: 100%; margin-top: 20px;">게임 다시 시작</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
